@@ -1,5 +1,6 @@
 <script setup lang="ts">
 // Competition Section Component
+import IconRight from "./icons/IconRight.vue";
 </script>
 
 <template>
@@ -43,21 +44,31 @@
       </div>
 
       <!-- Date Range -->
-      <div class="date-range-container">
-        <p class="date-label text-white text-center mb-6 text-xl">報名時間</p>
+      <div class="date-range-container mx-auto position-relative">
+        <div class="flex items-center w-full mb-4">
+          <p class="date-label text-white text-start text-5xl font-bold">報名時間</p>
+          <!-- 上紅線，從文字右側開始 -->
+          <div class="flex-grow h-1 bg-white ml-3"></div>
+        </div>
+
         <div class="date-range-display">
           <div class="date-item">
-            <span class="date-text">2025.06.27</span>
+            <span class="text-8xl font-bold :md:text-4xl">2025.06.27</span>
+            <!-- <span class="date-text">2025.06.27</span> -->
           </div>
-          <div class="arrow-separator">
-            <svg width="40" height="20" viewBox="0 0 40 20" fill="none">
-              <path d="M0 10H35M35 10L30 5M35 10L30 15" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
+
+          <IconRight class="w-30 h-30"/>
+
           <div class="date-item">
-            <span class="date-text">2025.09.28</span>
+            <span class="text-8xl font-bold :md:text-4xl">2025.09.28</span>
+            <!-- <span class="date-text">2025.09.28</span> -->
           </div>
         </div>
+
+        <p class="date-label text-white text-end mb-0 text-4xl font-bold mt-4">徵件截止至2025/09/28</p>
+
+        <!-- 下紅線 -->
+        <div class="w-full h-1 bg-white mt-4"></div>
       </div>
     </div>
   </section>
@@ -152,6 +163,10 @@
 }
 
 .date-range-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
   text-align: center;
 }
 
@@ -164,14 +179,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  /* gap: 8rem; */
 }
 
 .date-item {
-  background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 215, 0, 0.05));
-  border: 2px solid rgba(255, 215, 0, 0.5);
   border-radius: 12px;
-  padding: 1rem 2rem;
   backdrop-filter: blur(10px);
 }
 
@@ -182,20 +194,9 @@
   letter-spacing: 1px;
 }
 
-.arrow-separator {
-  display: flex;
-  align-items: center;
-  animation: pulse 2s ease-in-out infinite;
-}
-
 @keyframes shimmer {
   0% { transform: translateX(-100%) rotate(45deg); }
   100% { transform: translateX(200%) rotate(45deg); }
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.6; }
 }
 
 /* RWD */
@@ -233,10 +234,6 @@
   .date-range-display {
     flex-direction: column;
     gap: 1rem;
-  }
-
-  .arrow-separator {
-    transform: rotate(90deg);
   }
 
   .date-item {
