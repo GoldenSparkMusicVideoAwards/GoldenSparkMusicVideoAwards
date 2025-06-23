@@ -1,23 +1,45 @@
 <script setup lang="ts">
 // Judging Panel Section Component
+import folderImage from '@/assets/images/folder.svg';
+import judge1 from '@/assets/images/judge-01.svg';
+import judge2 from '@/assets/images/judge-02.svg';
+import judge3 from '@/assets/images/judge-03.svg';
 const judges = [
   {
     id: 1,
     name: '評審委員 A',
     title: '知名導演',
-    image: 'https://placehold.co/200x200/666/FFF?text=Judge+A'
+    image: judge1
   },
   {
     id: 2,
     name: '評審委員 B',
     title: '音樂製作人',
-    image: 'https://placehold.co/200x200/666/FFF?text=Judge+B'
+    image: judge2
   },
   {
     id: 3,
     name: '評審委員 C',
     title: '影像創作家',
-    image: 'https://placehold.co/200x200/666/FFF?text=Judge+C'
+    image: judge3
+  },
+  {
+    id: 4,
+    name: '評審委員 D',
+    title: '影像創作家',
+    image: judge1
+  },
+  {
+    id: 5,
+    name: '評審委員 E',
+    title: '影像創作家',
+    image: judge2
+  },
+  {
+    id: 6,
+    name: '評審委員 F',
+    title: '影像創作家',
+    image: judge3
   }
 ]
 </script>
@@ -29,26 +51,26 @@ const judges = [
         JUDGING PANEL
       </h2>
       <h3 class="text-3xl md:text-4xl font-bold text-center mb-16">
-        評審團
+        評審陣容
       </h3>
 
-      <div class="judges-grid grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+      <div class="judges-grid grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto flex justify-between">
         <div
           v-for="judge in judges"
           :key="judge.id"
-          class="judge-card"
         >
           <div class="judge-image-container">
-            <img
-              :src="judge.image"
-              :alt="judge.name"
-              class="judge-image"
-            />
-            <div class="image-overlay"></div>
+            <!-- 評審照片 -->
+            <div class="judge-image-clip">
+              <img :src="judge.image" alt="judge.name" class="judge-image">
+              <div class="image-overlay"></div>
+            </div>
+            <!-- 資料夾外框疊裝在最上層 -->
+            <img :src="folderImage" class="folder-frame" alt="folder">
           </div>
           <div class="judge-info">
             <h4 class="judge-name">{{ judge.name }}</h4>
-            <p class="judge-title">{{ judge.title }}</p>
+            <!-- <p class="judge-title">{{ judge.title }}</p> -->
           </div>
         </div>
       </div>
@@ -57,6 +79,8 @@ const judges = [
 </template>
 
 <style scoped>
+/* 移除 mask 相關樣式 */
+
 .judging-panel-section {
   border-top: 1px solid rgba(255, 215, 0, 0.1);
 }
@@ -105,13 +129,40 @@ const judges = [
   position: relative;
   width: 12rem;
   height: 12rem;
-  border-radius: 50%;
-  overflow: hidden;
   margin-bottom: 2rem;
-  border: 3px solid transparent;
-  background: linear-gradient(135deg, #FFD700, #FFA500) padding-box,
-              linear-gradient(135deg, #FFD700, #FFA500) border-box;
-  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+}
+
+/* 資料夾作為外框，最上層 */
+.folder-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none; /* 允許點擊穿透 */
+}
+
+/* 裁切過的照片容器 */
+.judge-image-clip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  /* 用 clip-path 精確控制照片面積，使其符合資料夾形狀 */
+  /* 這是一個資料夾形狀的多邊形，細節調整可需要精細調整 */
+  clip-path: polygon(
+    6% 33%,   /* 左上角 */
+    34% 33%,
+    55% 12%,
+    94% 12%,   /* 右上角 */
+    94% 70%,  /* 右下角前 */
+    94% 88%,  /* 右下角穿出點 */
+    6% 88%   /* 左下角 */
+  );
+  overflow: hidden;
 }
 
 .judge-image {
@@ -131,7 +182,7 @@ const judges = [
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.2), transparent);
+  background: linear-gradient(135deg, transparent, rgba(255, 215, 0, 0.2), transparent);
   opacity: 0;
   transition: opacity 0.3s ease;
 }

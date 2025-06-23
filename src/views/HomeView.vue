@@ -4,6 +4,9 @@
 
 <template>
   <div class="text-white">
+    <!-- Test mask-image -->
+    <!-- <Test /> -->
+
     <!-- Hero Section -->
     <HeroSection />
 
@@ -42,6 +45,7 @@ import OfficialMusicSection from '../components/OfficialMusicSection.vue';
 import LatestNewsSection from '../components/LatestNewsSection.vue';
 import EndSection from '../components/EndSection.vue';
 import FooterSection from '../components/FooterSection.vue';
+import Test from '../components/Test.vue';
 
 export default {
   components: {

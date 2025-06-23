@@ -1,5 +1,5 @@
 <template>
-  <section class="end-section pt-32 pb-16 px-4 my-8 relative lg:py-0">
+  <section class="end-section pt-0 pb-16 px-4 my-0 relative lg:pt-8">
     <div class="absolute bottom-5 left-10 border-b-4 border-l-4">
       <h6 class="text-2xl font-bold ps-4 pt-8 pb-4 translate-x-6">MUSIC</h6>
     </div>
@@ -8,7 +8,7 @@
     </div>
 
     <div class="container mx-auto max-w-6xl flex flex-col gap-6 items-center">
-      <img src="@/assets/images/enTitle.svg" alt="2025 Golden Spark Music Video Awards" class="w-full max-w-3xl mb-8">
+      <img src="@/assets/images/enTitle.svg" alt="2025 Golden Spark Music Video Awards" class="w-full max-w-3xl mb-16 lg:mb-0">
     </div>
   </section>
   <img src="@/assets/images/footer.svg" alt="2025 Golden Spark Music Video Awards" class="w-full min-w-full">
