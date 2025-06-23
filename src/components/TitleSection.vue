@@ -1,11 +1,11 @@
 <template>
   <section class="title-section pt-32 pb-16 px-4 mt-8 relative lg:py-0">
 
-    <div class="absolute top-5 left-10">
-      <h6 class="text-2xl font-bold border-t-4 border-l-4 ps-4 pt-8 pb-4">MUSIC</h6>
+    <div class="absolute top-5 left-10 border-t-4 border-l-4">
+      <h6 class="text-2xl font-bold ps-4 pt-8 pb-4 translate-x-6">MUSIC</h6>
     </div>
-    <div class="absolute top-5 right-10">
-      <h6 class="text-2xl font-bold border-t-4 border-r-4 pe-4 pt-8 pb-4">VIDEO</h6>
+    <div class="absolute top-5 right-10 border-t-4 border-r-4">
+      <h6 class="text-2xl font-bold pe-4 pt-8 pb-4 -translate-x-6">VIDEO</h6>
     </div>
 
     <div class="container mx-auto max-w-6xl flex flex-col gap-6 items-center">

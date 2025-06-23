@@ -105,18 +105,10 @@ const footerLinks = [
 
       <!-- Footer Bottom -->
       <div class="footer-bottom pt-8 border-t border-gray-700">
-        <div class="bottom-content flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="bottom-content flex flex-col md:flex-row justify-center items-center gap-4">
           <p class="copyright text-gray-400 text-sm">
-            © {{ currentYear }} GSMVA. All rights reserved.
+            © {{ currentYear }} Golden Spark Music Video Awards. All rights reserved.
           </p>
-          <div class="legal-links flex gap-6">
-            <a href="#" class="legal-link text-gray-400 hover:text-yellow-400 text-sm transition-colors">
-              隱私政策
-            </a>
-            <a href="#" class="legal-link text-gray-400 hover:text-yellow-400 text-sm transition-colors">
-              使用條款
-            </a>
-          </div>
         </div>
       </div>
     </div>
@@ -124,93 +116,5 @@ const footerLinks = [
 </template>
 
 <style scoped>
-.footer-section {
-  background: linear-gradient(180deg, #111827 0%, #000000 100%);
-  border-top: 1px solid rgba(255, 215, 0, 0.2);
-}
 
-.brand-title {
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
-}
-
-.social-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  background: rgba(255, 215, 0, 0.1);
-  border: 1px solid rgba(255, 215, 0, 0.3);
-  color: #FFD700;
-  transition: all 0.3s ease;
-}
-
-.social-link:hover {
-  background: rgba(255, 215, 0, 0.2);
-  border-color: #FFD700;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
-}
-
-.social-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.contact-item {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.contact-label {
-  font-weight: 500;
-}
-
-.contact-value {
-  font-size: 0.875rem;
-}
-
-/* RWD */
-@media (max-width: 768px) {
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    text-align: center;
-  }
-
-  .social-links {
-    justify-content: center;
-  }
-
-  .bottom-content {
-    text-align: center;
-  }
-
-  .legal-links {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 640px) {
-  .footer-section {
-    padding: 2rem 1rem;
-  }
-
-  .brand-description {
-    font-size: 0.8rem;
-  }
-
-  .social-link {
-    width: 2rem;
-    height: 2rem;
-  }
-
-  .social-icon svg {
-    width: 16px;
-    height: 16px;
-  }
-}
 </style>

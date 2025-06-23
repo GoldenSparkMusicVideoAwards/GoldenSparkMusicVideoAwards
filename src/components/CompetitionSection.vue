@@ -111,8 +111,8 @@ import IconRight from "./icons/IconRight.vue";
   width: 12rem;
   height: 12rem;
   border-radius: 50%;
-  /* background: linear-gradient(90deg, #606060, #a5a5a5); */
-  background: linear-gradient(90deg, rgba(96, 96, 96, 0.63) 0%, rgba(165, 165, 165, 0.63) 100%);
+  /* background: linear-gradient(90deg, #606060, #afafaf); */
+  background: linear-gradient(90deg, rgba(96, 96, 96, 0.63) 0%, rgba(127, 127, 127, 0.63) 12.5%, rgba(175, 175, 175, 0.63) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
