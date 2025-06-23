@@ -53,14 +53,14 @@ import IconRight from "./icons/IconRight.vue";
 
         <div class="date-range-display">
           <div class="date-item">
-            <span class="text-8xl font-bold :md:text-4xl">2025.06.27</span>
+            <span class="text-6xl font-bold lg:text-8xl">2025.06.27</span>
             <!-- <span class="date-text">2025.06.27</span> -->
           </div>
 
-          <IconRight class="w-30 h-30"/>
+          <IconRight class="w-20 h-20 rotate-90 md:w-30 md:h-30 md:rotate-0"/>
 
           <div class="date-item">
-            <span class="text-8xl font-bold :md:text-4xl">2025.09.28</span>
+            <span class="text-6xl font-bold lg:text-8xl">2025.09.28</span>
             <!-- <span class="date-text">2025.09.28</span> -->
           </div>
         </div>
@@ -84,16 +84,6 @@ import IconRight from "./icons/IconRight.vue";
   display: inline-block;
   padding: 0 2rem;
 }
-
-/* .section-title::before, .section-title::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  width: 3rem;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, #FFD700, transparent);
-  transform: translateY(-50%);
-} */
 
 .section-title::before {
   right: 100%;
@@ -121,12 +111,13 @@ import IconRight from "./icons/IconRight.vue";
   width: 12rem;
   height: 12rem;
   border-radius: 50%;
-  background: linear-gradient(135deg, #FFD700, #FFA500);
+  /* background: linear-gradient(90deg, #606060, #a5a5a5); */
+  background: linear-gradient(90deg, rgba(96, 96, 96, 0.63) 0%, rgba(165, 165, 165, 0.63) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 2rem;
-  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+  box-shadow: 0 8px 25px rgba(120, 120, 120, 0.3);
   position: relative;
   overflow: hidden;
   border: 5px solid #bababa;
@@ -183,7 +174,6 @@ import IconRight from "./icons/IconRight.vue";
 }
 
 .date-item {
-  border-radius: 12px;
   backdrop-filter: blur(10px);
 }
 
@@ -195,8 +185,8 @@ import IconRight from "./icons/IconRight.vue";
 }
 
 @keyframes shimmer {
-  0% { transform: translateX(-100%) rotate(45deg); }
-  100% { transform: translateX(200%) rotate(45deg); }
+  0% { transform: translateX(-150%) rotate(45deg); }
+  100% { transform: translateX(150%) rotate(45deg); }
 }
 
 /* RWD */
@@ -207,13 +197,11 @@ import IconRight from "./icons/IconRight.vue";
   }
 
   .icon-circle {
-    width: 5rem;
-    height: 5rem;
     margin-bottom: 1.5rem;
   }
 
   .icon-text {
-    font-size: 1rem;
+    font-size: 2rem;
   }
 
   .card-text {
@@ -237,7 +225,7 @@ import IconRight from "./icons/IconRight.vue";
   }
 
   .date-item {
-    padding: 0.75rem 1.5rem;
+    padding: 1.5rem 0;
   }
 
   .date-text {

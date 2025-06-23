@@ -7,6 +7,8 @@
     <!-- Hero Section -->
     <HeroSection />
 
+    <TitleSection />
+
     <!-- Registration Section -->
     <RegistrationSection />
 
@@ -29,6 +31,7 @@
 
 <script lang="ts">
 import HeroSection from '../components/HeroSection.vue';
+import TitleSection from '../components/TitleSection.vue';
 import RegistrationSection from '../components/RegistrationSection.vue';
 import CompetitionSection from '../components/CompetitionSection.vue';
 import JudgingPanelSection from '../components/JudgingPanelSection.vue';
@@ -39,6 +42,7 @@ import FooterSection from '../components/FooterSection.vue';
 export default {
   components: {
     HeroSection,
+    TitleSection,
     RegistrationSection,
     CompetitionSection,
     JudgingPanelSection,
