@@ -60,7 +60,7 @@ const judges = [
           v-for="judge in judges"
           :key="judge.id"
         >
-          <div class="judge-image-container">
+          <div class="judge-image-container hover:scale-110 transition-all duration-300 ease-in-out">
             <!-- 評審照片 -->
             <div class="judge-image-clip">
               <img :src="judge.image" alt="judge.name" class="judge-image">

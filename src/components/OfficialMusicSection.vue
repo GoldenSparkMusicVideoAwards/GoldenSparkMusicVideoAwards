@@ -85,28 +85,38 @@ const musicTracks = [
       </div> -->
 
       <div class="music-bg container mx-auto max-w-6xl my-10 py-10 flex flex-col justify-center items-center">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-25 max-w-7xl mx-auto my-10">
-          <div class="flex flex-col justify-center items-center w-40 h-40 md:w-48 md:h-48">
-            <img class="w-full h-full object-cover rounded-full aspect-square" src="@/assets/images/officialMusic-01.svg" alt="滅火器">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto my-10 md:gap-15 lg:gap-25">
+          <div class="flex flex-col justify-center items-center w-60 h-60">
+            <div class="overflow-hidden rounded-full">
+              <img class="w-full h-full object-cover aspect-square transition-all duration-300 ease-in-out hover:scale-110 hover:rotate-3" src="@/assets/images/officialMusic-01.svg" alt="滅火器">
+            </div>
             <div class="text-3xl md:text-4xl font-bold my-2">滅火器</div>
           </div>
-          <div class="flex flex-col justify-center items-center w-40 h-40 md:w-48 md:h-48">
-            <img class="w-full h-full object-cover rounded-full aspect-square" src="@/assets/images/officialMusic-02.svg" alt="孩子王">
+          <div class="flex flex-col justify-center items-center w-60 h-60">
+            <div class="overflow-hidden rounded-full">
+              <img class="w-full h-full object-cover aspect-square transition-all duration-300 ease-in-out hover:scale-110 hover:rotate-3" src="@/assets/images/officialMusic-02.svg" alt="孩子王">
+            </div>
             <div class="text-3xl md:text-4xl font-bold my-2">孩子王</div>
           </div>
-          <div class="flex flex-col justify-center items-center w-40 h-40 md:w-48 md:h-48">
-            <img class="w-full h-full object-cover rounded-full aspect-square" src="@/assets/images/officialMusic-03.svg" alt="普通隊長">
+          <div class="flex flex-col justify-center items-center w-60 h-60">
+            <div class="overflow-hidden rounded-full">
+              <img class="w-full h-full object-cover aspect-square transition-all duration-300 ease-in-out hover:scale-110 hover:rotate-3" src="@/assets/images/officialMusic-03.svg" alt="普通隊長">
+            </div>
             <div class="text-3xl md:text-4xl font-bold my-2">普通隊長</div>
           </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-25 max-w-7xl mx-auto my-10">
-          <div class="flex flex-col justify-center items-center w-40 h-40 md:w-48 md:h-48">
-            <img class="w-full h-full object-cover rounded-full aspect-square" src="@/assets/images/officialMusic-04.svg" alt="Gummy B">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-auto my-10 md:gap-15 lg:gap-25">
+          <div class="flex flex-col justify-center items-center w-60 h-60">
+            <div class="overflow-hidden rounded-full">
+              <img class="w-full h-full object-cover aspect-square transition-all duration-300 ease-in-out hover:scale-110 hover:rotate-3" src="@/assets/images/officialMusic-04.svg" alt="Gummy B">
+            </div>
             <div class="text-3xl md:text-4xl font-bold my-2">Gummy B</div>
           </div>
-          <div class="flex flex-col justify-center items-center w-40 h-40 md:w-48 md:h-48">
-            <img class="w-full h-full object-cover rounded-full aspect-square" src="@/assets/images/officialMusic-05.svg" alt="夕陽武士">
+          <div class="flex flex-col justify-center items-center w-60 h-60">
+            <div class="overflow-hidden rounded-full">
+              <img class="w-full h-full object-cover aspect-square transition-all duration-300 ease-in-out hover:scale-110 hover:rotate-3" src="@/assets/images/officialMusic-05.svg" alt="夕陽武士">
+            </div>
             <div class="text-3xl md:text-4xl font-bold my-2">夕陽武士</div>
           </div>
         </div>

@@ -1,12 +1,17 @@
+<script setup lang="ts">
+import { onMounted } from 'vue'
+
+onMounted(() => {
+  // 可以在這裡添加 JavaScript 動畫邏輯
+})
+</script>
+
 <template>
-  <div class="mask"></div>
+  <section class="hero-section w-full relative h-full lg:min-h-screen">
+
+  </section>
 </template>
 
 <style scoped>
-.mask {
-  width: 100px;
-  height: 90px;
-  background-color: white;
-  mask-image: url('@/assets/images/folder.svg');
-}
+
 </style>
