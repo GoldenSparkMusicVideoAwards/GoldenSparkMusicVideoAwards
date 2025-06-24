@@ -53,10 +53,10 @@ const musicTracks = [
         OFFICIAL MUSIC
       </h2>
       <h3 class="text-3xl md:text-4xl font-bold text-center mb-16">
-        官方音樂
+        官方音樂庫
       </h3>
 
-      <div class="music-grid grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-7xl mx-auto">
+      <!-- <div class="music-grid grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-7xl mx-auto">
         <div
           v-for="track in musicTracks"
           :key="track.id"
@@ -82,12 +82,52 @@ const musicTracks = [
             <p class="music-artist">{{ track.artist }}</p>
           </div>
         </div>
+      </div> -->
+
+      <div class="music-bg container mx-auto max-w-6xl my-10 py-10 flex flex-col justify-center items-center">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-25 max-w-7xl mx-auto my-10">
+          <div class="flex flex-col justify-center items-center w-40 h-40 md:w-48 md:h-48">
+            <img class="w-full h-full object-cover rounded-full aspect-square" src="@/assets/images/officialMusic-01.svg" alt="滅火器">
+            <div class="text-3xl md:text-4xl font-bold my-2">滅火器</div>
+          </div>
+          <div class="flex flex-col justify-center items-center w-40 h-40 md:w-48 md:h-48">
+            <img class="w-full h-full object-cover rounded-full aspect-square" src="@/assets/images/officialMusic-02.svg" alt="孩子王">
+            <div class="text-3xl md:text-4xl font-bold my-2">孩子王</div>
+          </div>
+          <div class="flex flex-col justify-center items-center w-40 h-40 md:w-48 md:h-48">
+            <img class="w-full h-full object-cover rounded-full aspect-square" src="@/assets/images/officialMusic-03.svg" alt="普通隊長">
+            <div class="text-3xl md:text-4xl font-bold my-2">普通隊長</div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-25 max-w-7xl mx-auto my-10">
+          <div class="flex flex-col justify-center items-center w-40 h-40 md:w-48 md:h-48">
+            <img class="w-full h-full object-cover rounded-full aspect-square" src="@/assets/images/officialMusic-04.svg" alt="Gummy B">
+            <div class="text-3xl md:text-4xl font-bold my-2">Gummy B</div>
+          </div>
+          <div class="flex flex-col justify-center items-center w-40 h-40 md:w-48 md:h-48">
+            <img class="w-full h-full object-cover rounded-full aspect-square" src="@/assets/images/officialMusic-05.svg" alt="夕陽武士">
+            <div class="text-3xl md:text-4xl font-bold my-2">夕陽武士</div>
+          </div>
+        </div>
+
+        <div class="mx-auto md:me-10 ms-auto">
+          <div class="text-3xl md:text-4xl font-bold">版權音樂提供</div>
+        </div>
       </div>
+
     </div>
   </section>
 </template>
 
 <style scoped>
+
+.music-bg {
+  background: linear-gradient(90deg, rgba(96, 96, 96, 0.63) 0%, rgba(127, 127, 127, 0.63) 12.5%, rgba(175, 175, 175, 0.63) 100%);
+  border-radius: 36px;
+  border: 2px solid #bababa;
+}
+
 .official-music-section {
   border-top: 1px solid rgba(255, 215, 0, 0.1);
 }
@@ -209,6 +249,7 @@ const musicTracks = [
   line-height: 1.3;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -219,6 +260,7 @@ const musicTracks = [
   font-weight: 400;
   display: -webkit-box;
   -webkit-line-clamp: 1;
+  line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
