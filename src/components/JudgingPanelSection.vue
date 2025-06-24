@@ -7,37 +7,37 @@ import judge3 from '@/assets/images/judge-03.svg';
 const judges = [
   {
     id: 1,
-    name: '評審委員 A',
+    name: '劉立',
     title: '知名導演',
     image: judge1
   },
   {
     id: 2,
-    name: '評審委員 B',
+    name: 'Remii Huang',
     title: '音樂製作人',
     image: judge2
   },
   {
     id: 3,
-    name: '評審委員 C',
+    name: '郭佩萱',
     title: '影像創作家',
     image: judge3
   },
   {
     id: 4,
-    name: '評審委員 D',
+    name: '劉立',
     title: '影像創作家',
     image: judge1
   },
   {
     id: 5,
-    name: '評審委員 E',
+    name: 'Remii Huang',
     title: '影像創作家',
     image: judge2
   },
   {
     id: 6,
-    name: '評審委員 F',
+    name: '郭佩萱',
     title: '影像創作家',
     image: judge3
   }
@@ -54,8 +54,9 @@ const judges = [
         評審陣容
       </h3>
 
-      <div class="judges-grid grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto flex justify-between">
+      <div class="judges-grid justify-items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
         <div
+          class="flex flex-col items-center"
           v-for="judge in judges"
           :key="judge.id"
         >
@@ -129,7 +130,9 @@ const judges = [
   position: relative;
   width: 12rem;
   height: 12rem;
-  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* 資料夾作為外框，最上層 */
@@ -217,9 +220,8 @@ const judges = [
   }
 
   .judge-image-container {
-    width: 10rem;
-    height: 10rem;
-    margin-bottom: 1.5rem;
+    width: 15rem;
+    height: 15rem;
   }
 
   .judge-name {
@@ -232,6 +234,12 @@ const judges = [
 }
 
 @media (max-width: 640px) {
+  .judges-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
   .section-title {
     font-size: 2rem;
     padding: 0 1rem;
@@ -240,10 +248,5 @@ const judges = [
   /* .section-title::before, .section-title::after {
     width: 2rem;
   } */
-
-  .judge-image-container {
-    width: 8rem;
-    height: 8rem;
-  }
 }
 </style>
