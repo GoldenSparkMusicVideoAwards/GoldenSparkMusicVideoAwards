@@ -1,49 +1,5 @@
 <script setup lang="ts">
 // Official Music Section Component
-const musicTracks = [
-  {
-    id: 1,
-    title: '官方主題曲',
-    artist: '藝人 A',
-    cover: 'https://placehold.co/300x300/444/FFF?text=Track+1',
-    duration: '3:45'
-  },
-  {
-    id: 2,
-    title: '競賽配樂',
-    artist: '藝人 B',
-    cover: 'https://placehold.co/300x300/444/FFF?text=Track+2',
-    duration: '4:12'
-  },
-  {
-    id: 3,
-    title: '頒獎典禮音樂',
-    artist: '藝人 C',
-    cover: 'https://placehold.co/300x300/444/FFF?text=Track+3',
-    duration: '2:58'
-  },
-  {
-    id: 4,
-    title: '開場音樂',
-    artist: '藝人 D',
-    cover: 'https://placehold.co/300x300/444/FFF?text=Track+4',
-    duration: '3:21'
-  },
-  {
-    id: 5,
-    title: '結尾主題曲',
-    artist: '藝人 E',
-    cover: 'https://placehold.co/300x300/444/FFF?text=Track+5',
-    duration: '4:05'
-  },
-  {
-    id: 6,
-    title: '特別演出',
-    artist: '藝人 F',
-    cover: 'https://placehold.co/300x300/444/FFF?text=Track+6',
-    duration: '3:33'
-  }
-]
 </script>
 
 <template>

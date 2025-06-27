@@ -4,7 +4,7 @@
 
 <template>
   <section class="hero-section w-full relative h-full lg:min-h-screen">
-    <img src="@/assets/images/main.svg" alt="2025GSMA visual" class="w-full h-full object-cover">
+    <img src="@/assets/images/main.png" alt="2025GSMA visual" class="w-full h-full object-cover">
   </section>
 </template>
 

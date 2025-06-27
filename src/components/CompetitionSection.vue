@@ -15,32 +15,38 @@ import IconRight from "./icons/IconRight.vue";
 
       <!-- Competition Info Cards -->
       <div class="competition-info grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto mb-16">
-        <div class="info-card">
-          <div class="icon-circle">
-            <span class="icon-text">報名文件<br>下載專區</span>
+        <a href="https://drive.google.com/drive/u/6/folders/14NSMfoOwk83UqJFohSxVRuw2oezWQ1CP?usp=sharing" target="_blank">
+          <div class="info-card">
+            <div class="icon-circle">
+              <span class="icon-text">報名文件<br>下載專區</span>
+            </div>
+            <!-- <div class="card-content">
+              <p class="card-text">以各種形式詮釋「光」</p>
+            </div> -->
           </div>
-          <!-- <div class="card-content">
-            <p class="card-text">以各種形式詮釋「光」</p>
-          </div> -->
-        </div>
+        </a>
 
-        <div class="info-card">
-          <div class="icon-circle">
-            <span class="icon-text">線上報名<br>表單</span>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdTnHQkTdcOLh3hqSSQyMWCNZinDONEFCu4RKeCKL9xypxR5A/viewform?usp=dialog" target="_blank">
+          <div class="info-card">
+            <div class="icon-circle">
+              <span class="icon-text">線上報名<br>表單</span>
+            </div>
+            <!-- <div class="card-content">
+              <p class="card-text">原創MV作品</p>
+            </div> -->
           </div>
-          <!-- <div class="card-content">
-            <p class="card-text">原創MV作品</p>
-          </div> -->
-        </div>
+        </a>
 
-        <div class="info-card">
-          <div class="icon-circle">
-            <span class="icon-text">官方<br>音樂庫</span>
+        <a href="https://www.youtube.com/playlist?list=PLaqvmWfLbwNtAY6iOKhz4kDtP6LLzCNt5&si=K4O1M6QZZ460_-Zy" target="_blank">
+          <div class="info-card">
+            <div class="icon-circle">
+              <span class="icon-text">官方<br>音樂庫</span>
+            </div>
+            <!-- <div class="card-content">
+              <p class="card-text">1080p以上</p>
+            </div> -->
           </div>
-          <!-- <div class="card-content">
-            <p class="card-text">1080p以上</p>
-          </div> -->
-        </div>
+        </a>
       </div>
 
       <!-- Date Range -->
@@ -53,7 +59,7 @@ import IconRight from "./icons/IconRight.vue";
 
         <div class="date-range-display">
           <div class="date-item">
-            <span class="text-6xl font-bold lg:text-8xl">2025.06.27</span>
+            <span class="text-6xl font-bold lg:text-8xl">徵件截止至</span>
             <!-- <span class="date-text">2025.06.27</span> -->
           </div>
 

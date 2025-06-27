@@ -45,7 +45,7 @@ import OfficialMusicSection from '../components/OfficialMusicSection.vue';
 import LatestNewsSection from '../components/LatestNewsSection.vue';
 import EndSection from '../components/EndSection.vue';
 import FooterSection from '../components/FooterSection.vue';
-import Test from '../components/Test.vue';
+import Test from '../components/TestComp.vue';
 
 export default {
   components: {

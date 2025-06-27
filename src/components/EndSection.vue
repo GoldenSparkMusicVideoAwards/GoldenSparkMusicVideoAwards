@@ -11,7 +11,7 @@
       <img src="@/assets/images/enTitle.svg" alt="2025 Golden Spark Music Video Awards" class="w-full max-w-3xl mb-16 lg:mb-0">
     </div>
   </section>
-  <img src="@/assets/images/footer.svg" alt="2025 Golden Spark Music Video Awards" class="w-full min-w-full">
+  <img src="@/assets/images/footer.png" alt="2025 Golden Spark Music Video Awards" class="w-full min-w-full">
 </template>
 
 <script setup lang="ts">
