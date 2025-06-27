@@ -1,5 +1,17 @@
 <script setup lang="ts">
 // Registration Section Component
+import { ref } from 'vue';
+import signupFlowImage from '../assets/images/signupFlow-01.jpg';
+
+const isDialogOpen = ref(false);
+
+const openDialog = () => {
+  isDialogOpen.value = true;
+};
+
+const closeDialog = () => {
+  isDialogOpen.value = false;
+};
 </script>
 
 <template>
@@ -13,7 +25,7 @@
       </h3>
 
       <div class="registration-buttons flex flex-col items-center gap-6 max-w-md mx-auto">
-        <button class="btn-primary w-full">
+        <button class="btn-primary w-full" @click="openDialog">
           <span class="btn-text text-white">我有MV作品<br>我想投件!</span>
         </button>
         <button class="btn-primary w-full">
@@ -25,6 +37,31 @@
       </div>
     </div>
   </section>
+
+  <!-- Dialog -->
+  <Teleport to="body">
+    <div v-if="isDialogOpen" class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+      <div class="flex items-center justify-center min-h-screen p-4 text-center sm:p-0">
+        <!-- 背景遮罩 -->
+        <div class="fixed inset-0 bg-[rgba(0,0,0,0.5)] transition-opacity" @click="closeDialog"></div>
+
+        <!-- Dialog 內容 -->
+        <div class="relative inline-block px-2 pt-6 pb-2 bg-gray-900 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-3xl w-full">
+          <div class="absolute top-0 right-0 pt-2 pr-2">
+            <button type="button" @click="closeDialog" class="bg-gray-900 rounded-md text-gray-400 hover:text-white focus:outline-none">
+              <span class="sr-only">關閉</span>
+              <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="p-4">
+            <img :src="signupFlowImage" alt="報名流程" class="w-full h-auto" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </Teleport>
 </template>
 
 <style scoped>
