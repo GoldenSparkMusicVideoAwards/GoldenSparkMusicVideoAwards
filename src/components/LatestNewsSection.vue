@@ -1,5 +1,8 @@
 <script setup lang="ts">
 // Latest News Section Component
+
+import { ref } from 'vue';
+const isOpen = ref(false);
 const newsItems = [
   {
     id: 1,
@@ -37,7 +40,7 @@ const newsItems = [
 </script>
 
 <template>
-  <section class="latest-news-section py-16 px-4 text-center">
+  <section class="latest-news-section py-16 px-4 text-center" v-if="isOpen">
     <div class="container mx-auto max-w-6xl">
       <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-4">
         LATEST NEWS

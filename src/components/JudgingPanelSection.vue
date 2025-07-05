@@ -1,9 +1,13 @@
 <script setup lang="ts">
+import { ref } from 'vue';
+const showJudges = ref(false);
+
 // Judging Panel Section Component
 import folderImage from '@/assets/images/folder.svg';
 import judge1 from '@/assets/images/judge-01.svg';
 import judge2 from '@/assets/images/judge-02.svg';
 import judge3 from '@/assets/images/judge-03.svg';
+
 const judges = [
   {
     id: 1,
@@ -40,6 +44,12 @@ const judges = [
     name: '郭佩萱',
     title: '影像創作家',
     image: judge3
+  },
+  {
+    id: 7,
+    name: '郭佩萱',
+    title: '影像創作家',
+    image: judge3
   }
 ]
 </script>
@@ -54,24 +64,52 @@ const judges = [
         評審陣容
       </h3>
 
-      <div class="judges-grid justify-items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
-        <div
-          class="flex flex-col items-center"
-          v-for="judge in judges"
-          :key="judge.id"
-        >
-          <div class="judge-image-container hover:scale-110 transition-all duration-300 ease-in-out">
-            <!-- 評審照片 -->
-            <div class="judge-image-clip">
-              <img :src="judge.image" alt="judge.name" class="judge-image">
-              <div class="image-overlay"></div>
+      <div class="judges-grid-container">
+        <div class="judges-grid justify-items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+          <div
+            class="flex flex-col items-center"
+            v-for="judge in judges.slice(0, 3)"
+            :key="judge.id"
+          >
+            <div class="judge-image-container hover:scale-110 transition-all duration-300 ease-in-out">
+              <!-- 評審照片 -->
+              <div class="judge-image-clip" v-if="showJudges">
+                <img :src="judge.image" alt="judge.name" class="judge-image">
+                <div class="image-overlay"></div>
+              </div>
+              <!-- 資料夾外框疊裝在最上層 -->
+              <img :src="folderImage" class="folder-frame" alt="folder">
             </div>
-            <!-- 資料夾外框疊裝在最上層 -->
-            <img :src="folderImage" class="folder-frame" alt="folder">
+            <div class="judge-info">
+              <h4 class="judge-name" v-if="showJudges">{{ judge.name }}</h4>
+              <!-- <p class="judge-title">{{ judge.title }}</p> -->
+            </div>
           </div>
-          <div class="judge-info">
-            <h4 class="judge-name">{{ judge.name }}</h4>
-            <!-- <p class="judge-title">{{ judge.title }}</p> -->
+        </div>
+
+        <h3 class="text-3xl md:text-4xl font-bold text-center mx-auto my-4" v-if="!showJudges">
+          敬請期待
+        </h3>
+
+        <div class="judges-grid justify-items-center grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div
+            class="flex flex-col items-center"
+            v-for="judge in judges.slice(3)"
+            :key="judge.id"
+          >
+            <div class="judge-image-container hover:scale-110 transition-all duration-300 ease-in-out">
+              <!-- 評審照片 -->
+              <div class="judge-image-clip" v-if="showJudges">
+                <img :src="judge.image" alt="judge.name" class="judge-image">
+                <div class="image-overlay"></div>
+              </div>
+              <!-- 資料夾外框疊裝在最上層 -->
+              <img :src="folderImage" class="folder-frame" alt="folder">
+            </div>
+            <div class="judge-info">
+              <h4 class="judge-name" v-if="showJudges">{{ judge.name }}</h4>
+              <!-- <p class="judge-title">{{ judge.title }}</p> -->
+            </div>
           </div>
         </div>
       </div>
@@ -214,9 +252,21 @@ const judges = [
 }
 
 /* RWD */
+.judges-grid-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
 @media (max-width: 768px) {
   .judges-grid {
-    gap: 2rem;
+    gap: 1.5rem;
+  }
+
+  .judge-image-container {
+    width: 10rem;
+    height: 10rem;
   }
 
   .judge-image-container {

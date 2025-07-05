@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <section class="hero-section w-full relative h-full lg:min-h-screen">
+  <section class="hero-section w-full relative h-full lg:max-h-100vh">
     <img src="@/assets/images/main.png" alt="2025GSMA visual" class="w-full h-full object-cover">
   </section>
 </template>

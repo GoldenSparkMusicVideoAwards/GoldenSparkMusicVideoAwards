@@ -18,22 +18,26 @@ const closeDialog = () => {
   <section class="registration-section py-16 px-4 text-center">
     <div class="container mx-auto max-w-6xl">
       <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-4">
-        REGISTRATION
+        HOW TO REGISTER
       </h2>
       <h3 class="text-3xl md:text-4xl font-bold text-center mb-16">
         我要報名
       </h3>
 
       <div class="registration-buttons flex flex-col items-center gap-6 max-w-md mx-auto">
-        <button class="btn-primary w-full" @click="openDialog">
-          <span class="btn-text text-white">我有MV作品<br>我想投件!</span>
+        <button class="btn-primary w-full h-20 flex items-center justify-center" @click="openDialog">
+          <span class="btn-text text-white text-center">我有MV作品<br>我想投件!</span>
         </button>
-        <button class="btn-primary w-full">
-          <span class="btn-text text-white">我有自創或自覓的音樂<br>準備開拍!</span>
+        <button class="btn-primary w-full h-20 flex items-center justify-center">
+          <span class="btn-text text-white">我有音樂準備開拍!</span>
         </button>
-        <button class="btn-primary w-full">
-          <span class="btn-text text-white">我想拍但我沒有音樂<br>想用金電光的官方音樂!</span>
+        <button class="btn-primary w-full h-20 flex items-center justify-center">
+          <span class="btn-text text-white text-center">沒有音樂<br>給你金電光音樂庫!</span>
         </button>
+
+        <p class="text-md text-white mt-4">
+          若有任何問題，歡迎來信洽詢主辦單位：gsmv@gmail.com
+        </p>
       </div>
     </div>
   </section>

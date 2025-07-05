@@ -1,5 +1,23 @@
 <script setup lang="ts">
-// Official Music Section Component
+// 引入圖片
+import img1 from '@/assets/images/officialMusic-01.png';
+import img2 from '@/assets/images/officialMusic-02.png';
+import img3 from '@/assets/images/officialMusic-03.png';
+import img4 from '@/assets/images/officialMusic-04.png';
+import img5 from '@/assets/images/officialMusic-05.png';
+
+// 音樂項目資料
+const musicItems = [
+  { id: 1, name: '滅火器', image: img1 },
+  { id: 2, name: '孩子王', image: img2 },
+  { id: 3, name: '普通隊長', image: img3 },
+  { id: 4, name: 'Gummy B', image: img4 },
+  { id: 5, name: '夕陽武士', image: img5 }
+];
+
+// 將音樂項目分組，第一組3個，第二組2個
+const firstGroup = musicItems.slice(0, 3);
+const secondGroup = musicItems.slice(3);
 </script>
 
 <template>
@@ -41,45 +59,41 @@
       </div> -->
 
       <div class="music-bg container mx-auto max-w-6xl my-10 py-10 flex flex-col justify-center items-center">
+        <!-- 第一組：3個項目 -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto my-10 md:gap-15 lg:gap-25">
-          <div class="flex flex-col justify-center items-center w-60 h-60">
-            <div class="overflow-hidden rounded-full">
-              <img class="w-full h-full object-cover aspect-square transition-all duration-300 ease-in-out hover:scale-110 hover:rotate-3" src="@/assets/images/officialMusic-01.svg" alt="滅火器">
+          <template v-for="item in firstGroup" :key="item.id">
+            <div class="flex flex-col justify-center items-center w-60 h-60">
+              <div class="overflow-hidden rounded-full">
+                <img 
+                  class="w-full h-full object-cover aspect-square transition-all duration-300 ease-in-out hover:scale-110 hover:rotate-3" 
+                  :src="item.image" 
+                  :alt="item.name"
+                >
+              </div>
+              <div class="text-3xl md:text-4xl font-bold my-2">{{ item.name }}</div>
             </div>
-            <div class="text-3xl md:text-4xl font-bold my-2">滅火器</div>
-          </div>
-          <div class="flex flex-col justify-center items-center w-60 h-60">
-            <div class="overflow-hidden rounded-full">
-              <img class="w-full h-full object-cover aspect-square transition-all duration-300 ease-in-out hover:scale-110 hover:rotate-3" src="@/assets/images/officialMusic-02.svg" alt="孩子王">
-            </div>
-            <div class="text-3xl md:text-4xl font-bold my-2">孩子王</div>
-          </div>
-          <div class="flex flex-col justify-center items-center w-60 h-60">
-            <div class="overflow-hidden rounded-full">
-              <img class="w-full h-full object-cover aspect-square transition-all duration-300 ease-in-out hover:scale-110 hover:rotate-3" src="@/assets/images/officialMusic-03.svg" alt="普通隊長">
-            </div>
-            <div class="text-3xl md:text-4xl font-bold my-2">普通隊長</div>
-          </div>
+          </template>
         </div>
 
+        <!-- 第二組：2個項目 -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-auto my-10 md:gap-15 lg:gap-25">
-          <div class="flex flex-col justify-center items-center w-60 h-60">
-            <div class="overflow-hidden rounded-full">
-              <img class="w-full h-full object-cover aspect-square transition-all duration-300 ease-in-out hover:scale-110 hover:rotate-3" src="@/assets/images/officialMusic-04.svg" alt="Gummy B">
+          <template v-for="item in secondGroup" :key="item.id">
+            <div class="flex flex-col justify-center items-center w-60 h-60">
+              <div class="overflow-hidden rounded-full">
+                <img 
+                  class="w-full h-full object-cover aspect-square transition-all duration-300 ease-in-out hover:scale-110 hover:rotate-3" 
+                  :src="item.image" 
+                  :alt="item.name"
+                >
+              </div>
+              <div class="text-3xl md:text-4xl font-bold my-2">{{ item.name }}</div>
             </div>
-            <div class="text-3xl md:text-4xl font-bold my-2">Gummy B</div>
-          </div>
-          <div class="flex flex-col justify-center items-center w-60 h-60">
-            <div class="overflow-hidden rounded-full">
-              <img class="w-full h-full object-cover aspect-square transition-all duration-300 ease-in-out hover:scale-110 hover:rotate-3" src="@/assets/images/officialMusic-05.svg" alt="夕陽武士">
-            </div>
-            <div class="text-3xl md:text-4xl font-bold my-2">夕陽武士</div>
-          </div>
+          </template>
         </div>
 
-        <div class="mx-auto md:me-10 ms-auto">
+        <!-- <div class="mx-auto md:me-10 ms-auto">
           <div class="text-3xl md:text-4xl font-bold">版權音樂提供</div>
-        </div>
+        </div> -->
       </div>
 
     </div>

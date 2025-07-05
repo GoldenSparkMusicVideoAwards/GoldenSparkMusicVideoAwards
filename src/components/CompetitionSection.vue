@@ -10,15 +10,17 @@ import IconRight from "./icons/IconRight.vue";
         COMPETITION
       </h2>
       <h3 class="text-3xl md:text-4xl font-bold text-center mb-16">
-        競賽須知
+        競賽資訊
       </h3>
 
       <!-- Competition Info Cards -->
       <div class="competition-info grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto mb-16">
-        <a href="https://drive.google.com/drive/u/6/folders/14NSMfoOwk83UqJFohSxVRuw2oezWQ1CP?usp=sharing" target="_blank">
+        <a href="https://drive.google.com/drive/folders/14NSMfoOwk83UqJFohSxVRuw2oezWQ1CP?usp=sharing" target="_blank">
           <div class="info-card">
             <div class="icon-circle">
-              <span class="icon-text">報名文件<br>下載專區</span>
+              <span class="icon-text text-start">報名
+                <span class="text-lg transform rotate-10 inline-block">文件/<br>檔案</span>
+                <br>下載專區</span>
             </div>
             <!-- <div class="card-content">
               <p class="card-text">以各種形式詮釋「光」</p>
@@ -37,7 +39,7 @@ import IconRight from "./icons/IconRight.vue";
           </div>
         </a>
 
-        <a href="https://www.youtube.com/playlist?list=PLaqvmWfLbwNtAY6iOKhz4kDtP6LLzCNt5&si=K4O1M6QZZ460_-Zy" target="_blank">
+        <a href="https://www.youtube.com/playlist?list=PLaqvmWfLbwNtAY6iOKhz4kDtP6LLzCNt5" target="_blank">
           <div class="info-card">
             <div class="icon-circle">
               <span class="icon-text">官方<br>音樂庫</span>
@@ -71,7 +73,7 @@ import IconRight from "./icons/IconRight.vue";
           </div>
         </div>
 
-        <p class="date-label text-white text-end mb-0 text-4xl font-bold mt-4">徵件截止至2025/09/28</p>
+        <!-- <p class="date-label text-white text-end mb-0 text-4xl font-bold mt-4">徵件截止至2025/09/28</p> -->
 
         <!-- 下紅線 -->
         <div class="w-full h-1 bg-white mt-4"></div>
