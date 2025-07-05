@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import SidePanel from '@/components/SidePanel.vue';
+import SidePanel from '@/components/home/SidePanel.vue';
 </script>
 
 <template>

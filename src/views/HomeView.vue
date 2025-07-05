@@ -4,9 +4,6 @@
 
 <template>
   <div class="text-white">
-    <!-- Test mask-image -->
-    <!-- <Test /> -->
-
     <!-- Hero Section -->
     <HeroSection />
 
@@ -29,23 +26,18 @@
 
     <!-- End Section -->
     <EndSection />
-
-    <!-- Footer -->
-    <!-- <FooterSection /> -->
   </div>
 </template>
 
 <script lang="ts">
-import HeroSection from '../components/HeroSection.vue';
-import TitleSection from '../components/TitleSection.vue';
-import RegistrationSection from '../components/RegistrationSection.vue';
-import CompetitionSection from '../components/CompetitionSection.vue';
-import JudgingPanelSection from '../components/JudgingPanelSection.vue';
-import OfficialMusicSection from '../components/OfficialMusicSection.vue';
-import LatestNewsSection from '../components/LatestNewsSection.vue';
-import EndSection from '../components/EndSection.vue';
-import FooterSection from '../components/FooterSection.vue';
-import Test from '../components/TestComp.vue';
+import HeroSection from '../components/home/HeroSection.vue';
+import TitleSection from '../components/home/TitleSection.vue';
+import RegistrationSection from '../components/home/RegistrationSection.vue';
+import CompetitionSection from '../components/home/CompetitionSection.vue';
+import JudgingPanelSection from '../components/home/JudgingPanelSection.vue';
+import OfficialMusicSection from '../components/home/OfficialMusicSection.vue';
+import LatestNewsSection from '../components/home/LatestNewsSection.vue';
+import EndSection from '../components/home/EndSection.vue';
 
 export default {
   components: {
@@ -56,7 +48,6 @@ export default {
     JudgingPanelSection,
     OfficialMusicSection,
     LatestNewsSection,
-    FooterSection,
   },
 };
 </script>

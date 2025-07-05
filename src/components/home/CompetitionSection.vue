@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Competition Section Component
-import IconRight from "./icons/IconRight.vue";
+import IconRight from "@/components/icons/IconRight.vue";
 </script>
 
 <template>
