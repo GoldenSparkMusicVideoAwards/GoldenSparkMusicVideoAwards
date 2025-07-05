@@ -1,9 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import SidePanel from '@/components/SidePanel.vue';
+</script>
 
 <template>
   <div class="app-container">
     <div class="texture-overlay"></div>
     <router-view />
+    <SidePanel />
   </div>
 </template>
 
