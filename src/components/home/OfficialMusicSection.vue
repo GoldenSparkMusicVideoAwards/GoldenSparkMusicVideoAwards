@@ -78,7 +78,10 @@ const secondGroup = musicItems.slice(3);
   height: 200px;
   border-radius: 50%;
   overflow: hidden;
-  isolation: isolate;
+  /* isolation: isolate; */
+  transform: translateZ(0);
+  -webkit-transform: rotate(0deg);
+  /* -webkit-appearance: none; */
 }
 
 .image-content {
