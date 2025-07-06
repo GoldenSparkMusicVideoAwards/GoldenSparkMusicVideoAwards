@@ -222,10 +222,10 @@ const secondGroup = musicItems.slice(3);
 
 /* 響應式設計 */
 @media (max-width: 768px) {
-  .image-container {
+  /* .image-container {
     width: 150px;
     height: 150px;
-  }
+  } */
 
   .music-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -234,10 +234,10 @@ const secondGroup = musicItems.slice(3);
 }
 
 @media (max-width: 640px) {
-  .image-container {
+  /* .image-container {
     width: 120px;
     height: 120px;
-  }
+  } */
 
   .section-title {
     font-size: 2rem;
@@ -258,10 +258,10 @@ const secondGroup = musicItems.slice(3);
 }
 
 @media (max-width: 480px) {
-  .image-container {
+  /* .image-container {
     width: 100px;
     height: 100px;
-  }
+  } */
 
   .play-button {
     width: 2.5rem;
