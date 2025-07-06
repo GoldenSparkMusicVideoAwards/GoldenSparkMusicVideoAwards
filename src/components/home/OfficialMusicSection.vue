@@ -1,10 +1,10 @@
 <script setup lang="ts">
 // 引入圖片
-import img1 from '@/assets/images/officialMusic-01.png';
-import img2 from '@/assets/images/officialMusic-02.png';
-import img3 from '@/assets/images/officialMusic-03.png';
-import img4 from '@/assets/images/officialMusic-04.png';
-import img5 from '@/assets/images/officialMusic-05.png';
+import img1 from '@/assets/images/滅火器.jpg';
+import img2 from '@/assets/images/孩子王.jpg';
+import img3 from '@/assets/images/普通隊長.jpg';
+import img4 from '@/assets/images/Gummy.jpg';
+import img5 from '@/assets/images/夕陽武士.jpg';
 
 // 音樂項目資料
 const musicItems = [
@@ -64,9 +64,9 @@ const secondGroup = musicItems.slice(3);
           <template v-for="item in firstGroup" :key="item.id">
             <div class="flex flex-col justify-center items-center w-60 h-60">
               <div class="overflow-hidden rounded-full">
-                <img 
-                  class="w-full h-full object-cover aspect-square transition-all duration-300 ease-in-out hover:scale-110 hover:rotate-3" 
-                  :src="item.image" 
+                <img
+                  class="w-full h-full object-cover aspect-square transition-all duration-300 ease-in-out hover:scale-110 hover:rotate-3"
+                  :src="item.image"
                   :alt="item.name"
                 >
               </div>
@@ -80,9 +80,9 @@ const secondGroup = musicItems.slice(3);
           <template v-for="item in secondGroup" :key="item.id">
             <div class="flex flex-col justify-center items-center w-60 h-60">
               <div class="overflow-hidden rounded-full">
-                <img 
-                  class="w-full h-full object-cover aspect-square transition-all duration-300 ease-in-out hover:scale-110 hover:rotate-3" 
-                  :src="item.image" 
+                <img
+                  class="w-full h-full object-cover aspect-square transition-all duration-300 ease-in-out hover:scale-110 hover:rotate-3"
+                  :src="item.image"
                   :alt="item.name"
                 >
               </div>

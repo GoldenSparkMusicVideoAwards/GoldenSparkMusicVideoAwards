@@ -4,7 +4,7 @@
 
 <template>
   <section class="hero-section w-full relative h-full lg:max-h-screen">
-    <img src="@/assets/images/main.png" alt="2025GSMA visual" class="w-full h-full object-cover">
+    <img src="@/assets/images/main.png" alt="2025金電光主視覺" class="w-full h-full object-cover">
   </section>
 </template>
 
