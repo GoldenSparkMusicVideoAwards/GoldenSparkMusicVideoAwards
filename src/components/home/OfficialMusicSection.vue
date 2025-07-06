@@ -67,7 +67,7 @@ const secondGroup = musicItems.slice(3);
             <div class="flex flex-col justify-center items-center w-60 h-60">
               <div class="overflow-hidden rounded-full">
                 <img
-                  class="w-full h-full object-cover aspect-square transition-all duration-300 ease-in-out hover:scale-110 hover:rotate-3"
+                  class="w-full h-full object-cover aspect-square rounded-full transition-all duration-300 ease-in-out hover:scale-110 hover:rotate-3"
                   :src="item.image"
                   :alt="item.name"
                 >
