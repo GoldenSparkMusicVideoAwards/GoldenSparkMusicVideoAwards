@@ -91,7 +91,7 @@ const judges = [
           敬請期待
         </h3>
 
-        <div class="judges-grid justify-items-center grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div class="judges-grid justify-items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
           <div
             class="flex flex-col items-center"
             v-for="judge in judges.slice(3)"

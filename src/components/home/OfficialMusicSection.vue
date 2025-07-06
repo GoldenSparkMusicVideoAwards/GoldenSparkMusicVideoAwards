@@ -24,10 +24,12 @@ const secondGroup = musicItems.slice(3);
   <section class="official-music-section py-16 px-4 text-center">
     <div class="container mx-auto max-w-6xl">
       <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-4">
-        OFFICIAL MUSIC
+        MUSIC PARTNERS
       </h2>
       <h3 class="text-3xl md:text-4xl font-bold text-center mb-16">
-        官方音樂庫
+        熱血應援
+        <span class="px-2">|</span>
+        音樂夥伴
       </h3>
 
       <!-- <div class="music-grid grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-7xl mx-auto">
