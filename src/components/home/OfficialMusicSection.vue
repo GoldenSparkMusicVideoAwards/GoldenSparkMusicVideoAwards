@@ -117,6 +117,7 @@ const secondGroup = musicItems.slice(3);
       content: "";
       clear: both;
     }
+  }
 }
 
 .music-bg {
