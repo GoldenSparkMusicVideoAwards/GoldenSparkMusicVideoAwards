@@ -25,7 +25,10 @@
     <LatestNewsSection />
 
     <!-- End Section -->
-    <EndSection />
+    <!-- <EndSection /> -->
+
+    <!-- Footer -->
+    <FooterSection />
   </div>
 </template>
 
@@ -38,6 +41,7 @@ import JudgingPanelSection from '../components/home/JudgingPanelSection.vue';
 import OfficialMusicSection from '../components/home/OfficialMusicSection.vue';
 import LatestNewsSection from '../components/home/LatestNewsSection.vue';
 import EndSection from '../components/home/EndSection.vue';
+import FooterSection from '../components/home/FooterSection.vue';
 
 export default {
   components: {
