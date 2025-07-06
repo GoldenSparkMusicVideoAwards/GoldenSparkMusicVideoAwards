@@ -32,42 +32,14 @@ const secondGroup = musicItems.slice(3);
         音樂夥伴
       </h3>
 
-      <!-- <div class="music-grid grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-7xl mx-auto">
-        <div
-          v-for="track in musicTracks"
-          :key="track.id"
-          class="music-card"
-        >
-          <div class="music-cover-container">
-            <img
-              :src="track.cover"
-              :alt="track.title"
-              class="music-cover"
-            />
-            <div class="play-overlay">
-              <div class="play-button">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M8 5v14l11-7z" fill="currentColor"/>
-                </svg>
-              </div>
-            </div>
-            <div class="duration-badge">{{ track.duration }}</div>
-          </div>
-          <div class="music-info">
-            <h4 class="music-title">{{ track.title }}</h4>
-            <p class="music-artist">{{ track.artist }}</p>
-          </div>
-        </div>
-      </div> -->
-
       <div class="music-bg container mx-auto max-w-6xl my-10 py-10 flex flex-col justify-center items-center">
         <!-- 第一組：3個項目 -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto my-10 md:gap-15 lg:gap-25">
           <template v-for="item in firstGroup" :key="item.id">
             <div class="flex flex-col justify-center items-center w-60 h-60">
-              <div class="overflow-hidden rounded-full">
+              <div class="image-container">
                 <img
-                  class="w-full h-full object-cover aspect-square rounded-full transition-all duration-300 ease-in-out hover:scale-110 hover:rotate-3"
+                  class="image-content transition-all duration-300 ease-in-out hover:scale-110 hover:rotate-3"
                   :src="item.image"
                   :alt="item.name"
                 >
@@ -81,9 +53,9 @@ const secondGroup = musicItems.slice(3);
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-auto my-10 md:gap-15 lg:gap-25">
           <template v-for="item in secondGroup" :key="item.id">
             <div class="flex flex-col justify-center items-center w-60 h-60">
-              <div class="overflow-hidden rounded-full">
+              <div class="image-container">
                 <img
-                  class="w-full h-full object-cover aspect-square transition-all duration-300 ease-in-out hover:scale-110 hover:rotate-3"
+                  class="image-content transition-all duration-300 ease-in-out hover:scale-110 hover:rotate-3"
                   :src="item.image"
                   :alt="item.name"
                 >
@@ -92,17 +64,28 @@ const secondGroup = musicItems.slice(3);
             </div>
           </template>
         </div>
-
-        <!-- <div class="mx-auto md:me-10 ms-auto">
-          <div class="text-3xl md:text-4xl font-bold">版權音樂提供</div>
-        </div> -->
       </div>
-
     </div>
   </section>
 </template>
 
 <style scoped>
+/* 圖片容器 - 使用 CSS Grid 確保圓形 */
+.image-container {
+  display: grid;
+  place-items: center;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.image-content {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  grid-area: 1 / 1;
+}
 
 .music-bg {
   background: linear-gradient(90deg, rgba(96, 96, 96, 0.63) 0%, rgba(127, 127, 127, 0.63) 12.5%, rgba(175, 175, 175, 0.63) 100%);
@@ -119,16 +102,6 @@ const secondGroup = musicItems.slice(3);
   display: inline-block;
   padding: 0 2rem;
 }
-
-/* .section-title::before, .section-title::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  width: 3rem;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, #FFD700, transparent);
-  transform: translateY(-50%);
-} */
 
 .section-title::before {
   right: 100%;
@@ -247,8 +220,13 @@ const secondGroup = musicItems.slice(3);
   overflow: hidden;
 }
 
-/* RWD */
+/* 響應式設計 */
 @media (max-width: 768px) {
+  .image-container {
+    width: 150px;
+    height: 150px;
+  }
+
   .music-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
@@ -256,14 +234,15 @@ const secondGroup = musicItems.slice(3);
 }
 
 @media (max-width: 640px) {
+  .image-container {
+    width: 120px;
+    height: 120px;
+  }
+
   .section-title {
     font-size: 2rem;
     padding: 0 1rem;
   }
-
-  /* .section-title::before, .section-title::after {
-    width: 2rem;
-  } */
 
   .music-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -279,6 +258,11 @@ const secondGroup = musicItems.slice(3);
 }
 
 @media (max-width: 480px) {
+  .image-container {
+    width: 100px;
+    height: 100px;
+  }
+
   .play-button {
     width: 2.5rem;
     height: 2.5rem;
