@@ -59,19 +59,12 @@ const news = computed(() => {
 const imageUrl = ref('');
 
 // 監聽 news 變化，當 news 改變時更新圖片
-watch(news, async (newVal) => {
+watch(news, (newVal) => {
   if (newVal && newVal.image) {
-    try {
-      // 從圖片路徑中提取文件名
-      const fileName = newVal.image.split('/').pop() || '';
-      // 動態導入圖片
-      const imgModule = await import(`../assets/images/${fileName}`);
-      imageUrl.value = imgModule.default;
-    } catch (error) {
-      console.error('無法載入圖片:', error);
-      // 如果導入失敗，使用備用圖片
-      imageUrl.value = '';
-    }
+    // 直接使用圖片路徑，因為圖片在 public 目錄下
+    imageUrl.value = newVal.image;
+  } else {
+    imageUrl.value = '';
   }
 }, { immediate: true });
 </script>
