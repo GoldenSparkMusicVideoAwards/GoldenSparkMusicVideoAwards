@@ -2,41 +2,11 @@
 // Latest News Section Component
 
 import { ref } from 'vue';
-const isOpen = ref(false);
-const newsItems = [
-  {
-    id: 1,
-    title: '2025 金電光 MV 大賽正式啟動',
-    summary: '本屆大賽以「光」為主題，邀請全國青年創作者共同參與這場視覺盛宴...',
-    image: 'https://placehold.co/400x250/333/FFF?text=News+1',
-    date: '2025.06.15',
-    category: '活動消息'
-  },
-  {
-    id: 2,
-    title: '評審團陣容正式公布',
-    summary: '本屆評審團集結了業界知名導演、音樂製作人以及影像創作專家...',
-    image: 'https://placehold.co/400x250/333/FFF?text=News+2',
-    date: '2025.06.10',
-    category: '評審資訊'
-  },
-  {
-    id: 3,
-    title: '參賽作品投稿須知',
-    summary: '詳細的作品規格、投稿流程以及注意事項，請參賽者務必詳閱...',
-    image: 'https://placehold.co/400x250/333/FFF?text=News+3',
-    date: '2025.06.05',
-    category: '參賽指南'
-  },
-  {
-    id: 4,
-    title: '官方音樂合作夥伴公布',
-    summary: '與多位知名音樂人合作，提供參賽者豐富的音樂資源...',
-    image: 'https://placehold.co/400x250/333/FFF?text=News+4',
-    date: '2025.06.01',
-    category: '合作夥伴'
-  }
-]
+import { useNewsStore } from '../../stores/news';
+
+const isOpen = ref(true);
+const newsStore = useNewsStore();
+const newsItems = newsStore.getAllNews;
 </script>
 
 <template>
@@ -71,7 +41,7 @@ const newsItems = [
             <h4 class="news-title">{{ news.title }}</h4>
             <p class="news-summary">{{ news.summary }}</p>
             <button class="read-more-btn">
-              <span>閱讀更多</span>
+              <router-link :to="'/news/' + news.id">閱讀更多</router-link>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
@@ -133,7 +103,7 @@ const newsItems = [
 .news-image-container {
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 300px;
   overflow: hidden;
 }
 

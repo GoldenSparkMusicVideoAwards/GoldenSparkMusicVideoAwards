@@ -44,6 +44,11 @@ const router = createRouter({
         },
       ]
     },
+    {
+      path: '/news/:id',
+      name: 'NewsDetail',
+      component: () => import('../views/NewsDetailView.vue')
+    },
     // 捕獲所有不存在的路徑並重定向到首頁
     {
       path: '/:pathMatch(.*)*',
@@ -51,6 +56,10 @@ const router = createRouter({
     }
 
   ],
+  scrollBehavior() {
+    // 始終滾動到頂部
+    return { top: 0 }
+  },
 })
 
 export default router
