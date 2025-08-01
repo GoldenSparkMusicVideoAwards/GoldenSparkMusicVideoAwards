@@ -20,7 +20,10 @@
         </div>
 
         <div class="news-image-container mb-8">
-          <img :src="news.image" :alt="news.title" class="w-full h-auto rounded-lg" />
+          <img v-if="imageUrl" :src="imageUrl" :alt="news.title" class="w-full h-auto rounded-lg" />
+          <div v-else class="w-full h-64 bg-gray-800 rounded-lg flex items-center justify-center">
+            <span class="text-gray-400">圖片載入中...</span>
+          </div>
         </div>
 
         <div class="news-body prose prose-invert max-w-none">
@@ -40,7 +43,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed, ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import { useNewsStore } from '../stores/news';
 
@@ -51,6 +54,26 @@ const newsStore = useNewsStore();
 const news = computed(() => {
   return newsStore.getNewsById(id.value);
 });
+
+// 動態導入圖片
+const imageUrl = ref('');
+
+// 監聽 news 變化，當 news 改變時更新圖片
+watch(news, async (newVal) => {
+  if (newVal && newVal.image) {
+    try {
+      // 從圖片路徑中提取文件名
+      const fileName = newVal.image.split('/').pop() || '';
+      // 動態導入圖片
+      const imgModule = await import(`../assets/images/${fileName}`);
+      imageUrl.value = imgModule.default;
+    } catch (error) {
+      console.error('無法載入圖片:', error);
+      // 如果導入失敗，使用備用圖片
+      imageUrl.value = '';
+    }
+  }
+}, { immediate: true });
 </script>
 
 <style scoped>
