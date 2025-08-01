@@ -1,55 +1,52 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-const showJudges = ref(false);
+const showJudges = ref(true);
 
 // Judging Panel Section Component
 import folderImage from '@/assets/images/folder.svg';
-import judge1 from '@/assets/images/judge-01.svg';
-import judge2 from '@/assets/images/judge-02.svg';
-import judge3 from '@/assets/images/judge-03.svg';
+import judge1 from '@/assets/images/左光平.jpg';
+import judge2 from '@/assets/images/邱柏昶2.jpg';
+import judge3 from '@/assets/images/黃婕妤.jpg';
+import judge4 from '@/assets/images/鄔鶴宏.jpg';
+import judge5 from '@/assets/images/楊凱淳.jpg';
+import judge6 from '@/assets/images/劉立.jpg';
+import judge7 from '@/assets/images/蔡翔.jpg';
 
 const judges = [
   {
     id: 1,
-    name: '劉立',
-    title: '知名導演',
+    name: '左光平',
     image: judge1
   },
   {
     id: 2,
-    name: 'Remii Huang',
-    title: '音樂製作人',
+    name: '邱柏昶',
     image: judge2
   },
   {
     id: 3,
-    name: '郭佩萱',
-    title: '影像創作家',
+    name: '黃婕妤',
     image: judge3
   },
   {
     id: 4,
-    name: '劉立',
-    title: '影像創作家',
-    image: judge1
+    name: '鄔鶴宏',
+    image: judge4
   },
   {
     id: 5,
-    name: 'Remii Huang',
-    title: '影像創作家',
-    image: judge2
+    name: '楊凱淳',
+    image: judge5
   },
   {
     id: 6,
-    name: '郭佩萱',
-    title: '影像創作家',
-    image: judge3
+    name: '劉 立',
+    image: judge6
   },
   {
     id: 7,
-    name: '郭佩萱',
-    title: '影像創作家',
-    image: judge3
+    name: '蔡 翔',
+    image: judge7
   }
 ]
 </script>
@@ -82,7 +79,6 @@ const judges = [
             </div>
             <div class="judge-info">
               <h4 class="judge-name" v-if="showJudges">{{ judge.name }}</h4>
-              <!-- <p class="judge-title">{{ judge.title }}</p> -->
             </div>
           </div>
         </div>
@@ -108,7 +104,6 @@ const judges = [
             </div>
             <div class="judge-info">
               <h4 class="judge-name" v-if="showJudges">{{ judge.name }}</h4>
-              <!-- <p class="judge-title">{{ judge.title }}</p> -->
             </div>
           </div>
         </div>
@@ -180,18 +175,18 @@ const judges = [
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 2;
+  z-index: 1;
   pointer-events: none; /* 允許點擊穿透 */
 }
 
 /* 裁切過的照片容器 */
 .judge-image-clip {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -0.8rem;
+  left: -0.8rem;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 2;
   /* 用 clip-path 精確控制照片面積，使其符合資料夾形狀 */
   /* 這是一個資料夾形狀的多邊形，細節調整可需要精細調整 */
   clip-path: polygon(
