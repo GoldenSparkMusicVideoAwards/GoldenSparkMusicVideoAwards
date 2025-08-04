@@ -5,7 +5,7 @@ const showJudges = ref(true);
 // Judging Panel Section Component
 import folderImage from '@/assets/images/folder.svg';
 import judge1 from '@/assets/images/左光平.jpg';
-import judge2 from '@/assets/images/邱柏昶2.jpg';
+import judge2 from '@/assets/images/邱柏昶.jpg';
 import judge3 from '@/assets/images/黃婕妤.jpg';
 import judge4 from '@/assets/images/鄔鶴宏.jpg';
 import judge5 from '@/assets/images/楊凱淳.jpg';
@@ -72,7 +72,6 @@ const judges = [
               <!-- 評審照片 -->
               <div class="judge-image-clip" v-if="showJudges">
                 <img :src="judge.image" alt="judge.name" class="judge-image">
-                <div class="image-overlay"></div>
               </div>
               <!-- 資料夾外框疊裝在最上層 -->
               <img :src="folderImage" class="folder-frame" alt="folder">
@@ -97,7 +96,6 @@ const judges = [
               <!-- 評審照片 -->
               <div class="judge-image-clip" v-if="showJudges">
                 <img :src="judge.image" alt="judge.name" class="judge-image">
-                <div class="image-overlay"></div>
               </div>
               <!-- 資料夾外框疊裝在最上層 -->
               <img :src="folderImage" class="folder-frame" alt="folder">
@@ -198,7 +196,7 @@ const judges = [
     94% 88%,  /* 右下角穿出點 */
     6% 88%   /* 左下角 */
   );
-  overflow: hidden;
+  overflow: hidden;     /* 重要：裁切超出的部分 */
 }
 
 .judge-image {
@@ -210,21 +208,6 @@ const judges = [
 
 .judge-card:hover .judge-image {
   transform: scale(1.1);
-}
-
-.image-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, transparent, rgba(255, 215, 0, 0.2), transparent);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.judge-card:hover .image-overlay {
-  opacity: 1;
 }
 
 .judge-info {
