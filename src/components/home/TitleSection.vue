@@ -9,7 +9,7 @@
     </div>
 
     <div class="container mx-auto max-w-6xl flex flex-col gap-6 items-center">
-      <img src="@/assets/images/date.png" alt="徵件截止至2025.9.28" class="w-full max-w-3xl mb-8 mt-2">
+      <img src="@/assets/images/date2.png" alt="徵件截止至2025.10.25" class="w-full max-w-3xl mb-8 mt-2">
       <img src="@/assets/images/title.svg" alt="金電光全國青年MV大賽" class="w-full max-w-3xl mb-4">
       <h3 class="text-xl md:text-2xl font-bold text-start mb-4 px-4 md:px-12 lg:px-40">
         這是一場從旋律出發、以影像抵達的創作旅程。2025金電光全國青年MV大賽，邀請你用畫面為音樂說故事。歡迎高中職、大專院校在學青年，選擇一首來自金電光官方音樂庫，或是自創、非商業授權原創音樂。一起用鏡頭寫下一段專屬的青春記憶。

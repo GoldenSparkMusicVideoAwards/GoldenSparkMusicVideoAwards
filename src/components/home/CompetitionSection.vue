@@ -68,12 +68,12 @@ import IconRight from "@/components/icons/IconRight.vue";
           <IconRight class="w-20 h-20 rotate-90 md:w-30 md:h-30 md:rotate-0"/>
 
           <div class="date-item">
-            <span class="text-6xl font-bold lg:text-8xl">2025.09.28</span>
+            <span class="text-6xl font-bold lg:text-8xl">2025/10/25</span>
             <!-- <span class="date-text">2025.09.28</span> -->
           </div>
         </div>
 
-        <!-- <p class="date-label text-white text-end mb-0 text-4xl font-bold mt-4">徵件截止至2025/09/28</p> -->
+        <!-- <p class="date-label text-white text-end mb-0 text-4xl font-bold mt-4">徵件截止至2025/10/25</p> -->
 
         <!-- 下紅線 -->
         <div class="w-full h-1 bg-white mt-4"></div>

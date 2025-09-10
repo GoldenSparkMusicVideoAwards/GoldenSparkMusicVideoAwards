@@ -27,9 +27,9 @@ import SidePanel from '@/components/home/SidePanel.vue';
   position: fixed;
   inset: 0;
   z-index: 0;
-  background: url('/src/assets/images/texture.svg') repeat;
+  background: url('/src/assets/images/texture.jpg') repeat;
   background-position: center;
   opacity: 0.14;
-  background-size: 1920px 7868px;
+  background-size: 1920px 2735px;
 }
 </style>

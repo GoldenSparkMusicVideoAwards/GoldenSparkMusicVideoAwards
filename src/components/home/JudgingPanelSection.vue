@@ -1,109 +1,109 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-const showJudges = ref(true);
+import { ref } from 'vue'
+const showJudges = ref(true)
 
 // Judging Panel Section Component
-import folderImage from '@/assets/images/folder.svg';
-import judge1 from '@/assets/images/左光平.jpg';
-import judge2 from '@/assets/images/邱柏昶.jpg';
-import judge3 from '@/assets/images/黃婕妤.jpg';
-import judge4 from '@/assets/images/鄔鶴宏.jpg';
-import judge5 from '@/assets/images/楊凱淳.jpg';
-import judge6 from '@/assets/images/劉立.jpg';
-import judge7 from '@/assets/images/蔡翔.jpg';
+import folderImage from '@/assets/images/folder.svg'
+import judge1 from '@/assets/images/左光平.jpg'
+import judge2 from '@/assets/images/邱柏昶.jpg'
+import judge3 from '@/assets/images/黃婕妤.jpg'
+import judge4 from '@/assets/images/鄔鶴宏.jpg'
+import judge5 from '@/assets/images/楊凱淳.jpg'
+import judge6 from '@/assets/images/劉立.jpg'
+import judge7 from '@/assets/images/蔡翔.jpg'
+import judge8 from '@/assets/images/陽一弘.jpg'
+import judge9 from '@/assets/images/劉澄毅.jpg'
 
 const judges = [
   {
     id: 1,
     name: '左光平',
-    image: judge1
+    image: judge1,
   },
   {
     id: 2,
     name: '邱柏昶',
-    image: judge2
+    image: judge2,
   },
   {
     id: 3,
     name: '黃婕妤',
-    image: judge3
+    image: judge3,
   },
   {
     id: 4,
     name: '鄔鶴宏',
-    image: judge4
+    image: judge4,
   },
   {
     id: 5,
     name: '楊凱淳',
-    image: judge5
+    image: judge5,
   },
   {
     id: 6,
     name: '劉 立',
-    image: judge6
+    image: judge6,
   },
   {
     id: 7,
     name: '蔡 翔',
-    image: judge7
-  }
+    image: judge7,
+  },
+  {
+    id: 8,
+    name: '陽一弘',
+    image: judge8,
+  },
+  {
+    id: 9,
+    name: '劉澄毅',
+    image: judge9,
+  },
 ]
 </script>
 
 <template>
   <section class="judging-panel-section py-16 px-4 text-center">
     <div class="container mx-auto max-w-6xl">
-      <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-4">
-        JUDGING PANEL
-      </h2>
-      <h3 class="text-3xl md:text-4xl font-bold text-center mb-16">
-        評審陣容
+      <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-4">JUDGING PANEL</h2>
+      <h3 class="text-3xl md:text-4xl font-bold text-center mb-16">評審陣容</h3>
+
+      <!-- 上排：四欄 -->
+      <div
+        class="judges-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 max-w-6xl mx-auto"
+      >
+        <div v-for="judge in judges.slice(0, 4)" :key="judge.id" class="flex flex-col items-center">
+          <div
+            class="judge-image-container hover:scale-110 transition-all duration-300 ease-in-out"
+          >
+            <div class="judge-image-clip" v-if="showJudges">
+              <img :src="judge.image" :alt="judge.name" class="judge-image" />
+            </div>
+            <img :src="folderImage" class="folder-frame" alt="folder" />
+          </div>
+          <h4 class="judge-name" v-if="showJudges">{{ judge.name }}</h4>
+        </div>
+      </div>
+
+      <h3 class="text-3xl md:text-4xl font-bold text-center mx-auto my-4" v-if="!showJudges">
+        敬請期待
       </h3>
 
-      <div class="judges-grid-container">
-        <div class="judges-grid justify-items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+      <!-- 下排：五欄（關鍵是 slice(4) 而不是 slice(5)） -->
+      <div
+        class="judges-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 md:gap-6 max-w-6xl mx-auto"
+      >
+        <div v-for="judge in judges.slice(4)" :key="judge.id" class="flex flex-col items-center">
           <div
-            class="flex flex-col items-center"
-            v-for="judge in judges.slice(0, 3)"
-            :key="judge.id"
+            class="judge-image-container hover:scale-110 transition-all duration-300 ease-in-out"
           >
-            <div class="judge-image-container hover:scale-110 transition-all duration-300 ease-in-out">
-              <!-- 評審照片 -->
-              <div class="judge-image-clip" v-if="showJudges">
-                <img :src="judge.image" alt="judge.name" class="judge-image">
-              </div>
-              <!-- 資料夾外框疊裝在最上層 -->
-              <img :src="folderImage" class="folder-frame" alt="folder">
+            <div class="judge-image-clip" v-if="showJudges">
+              <img :src="judge.image" :alt="judge.name" class="judge-image" />
             </div>
-            <div class="judge-info">
-              <h4 class="judge-name" v-if="showJudges">{{ judge.name }}</h4>
-            </div>
+            <img :src="folderImage" class="folder-frame" alt="folder" />
           </div>
-        </div>
-
-        <h3 class="text-3xl md:text-4xl font-bold text-center mx-auto my-4" v-if="!showJudges">
-          敬請期待
-        </h3>
-
-        <div class="judges-grid justify-items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
-          <div
-            class="flex flex-col items-center"
-            v-for="judge in judges.slice(3)"
-            :key="judge.id"
-          >
-            <div class="judge-image-container hover:scale-110 transition-all duration-300 ease-in-out">
-              <!-- 評審照片 -->
-              <div class="judge-image-clip" v-if="showJudges">
-                <img :src="judge.image" alt="judge.name" class="judge-image">
-              </div>
-              <!-- 資料夾外框疊裝在最上層 -->
-              <img :src="folderImage" class="folder-frame" alt="folder">
-            </div>
-            <div class="judge-info">
-              <h4 class="judge-name" v-if="showJudges">{{ judge.name }}</h4>
-            </div>
-          </div>
+          <h4 class="judge-name" v-if="showJudges">{{ judge.name }}</h4>
         </div>
       </div>
     </div>
@@ -148,7 +148,9 @@ const judges = [
   flex-direction: column;
   align-items: center;
   text-align: center;
-  transition: transform 0.3s ease, filter 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
   cursor: pointer;
 }
 
@@ -188,15 +190,15 @@ const judges = [
   /* 用 clip-path 精確控制照片面積，使其符合資料夾形狀 */
   /* 這是一個資料夾形狀的多邊形，細節調整可需要精細調整 */
   clip-path: polygon(
-    6% 33%,   /* 左上角 */
-    34% 33%,
+    6% 33%,
+    /* 左上角 */ 34% 33%,
     55% 12%,
-    94% 12%,   /* 右上角 */
-    94% 70%,  /* 右下角前 */
-    94% 88%,  /* 右下角穿出點 */
-    6% 88%   /* 左下角 */
+    94% 12%,
+    /* 右上角 */ 94% 70%,
+    /* 右下角前 */ 94% 88%,
+    /* 右下角穿出點 */ 6% 88% /* 左下角 */
   );
-  overflow: hidden;     /* 重要：裁切超出的部分 */
+  overflow: hidden; /* 重要：裁切超出的部分 */
 }
 
 .judge-image {
@@ -223,7 +225,7 @@ const judges = [
 }
 
 .judge-title {
-  color: #FFD700;
+  color: #ffd700;
   font-size: 1rem;
   font-weight: 400;
   letter-spacing: 1px;
