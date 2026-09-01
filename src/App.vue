@@ -1,9 +1,11 @@
 <script setup lang="ts">
+import FloatingHeader from '@/components/FloatingHeader.vue';
 import SidePanel from '@/components/home/SidePanel.vue';
 </script>
 
 <template>
   <div class="app-container">
+    <FloatingHeader />
     <div class="texture-overlay"></div>
     <router-view />
     <SidePanel />
